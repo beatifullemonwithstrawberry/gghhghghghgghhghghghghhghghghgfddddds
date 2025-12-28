@@ -72,6 +72,94 @@
             100% { background-position: -200% 0; }
         }
 
+        /* Contrôle audio */
+        .audio-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid #8B5CF6;
+            border-radius: 15px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+            z-index: 1000;
+        }
+
+        .audio-control button {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .audio-control button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+        }
+
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-icon {
+            color: #A78BFA;
+            font-size: 20px;
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #8B5CF6;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            background: #A78BFA;
+            transform: scale(1.2);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #8B5CF6;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .volume-slider::-moz-range-thumb:hover {
+            background: #A78BFA;
+            transform: scale(1.2);
+        }
+
         /* Contenu principal */
         #main-content {
             display: none;
@@ -199,7 +287,26 @@
         </div>
     </div>
 
+    <!-- Contrôle audio -->
+    <div class="audio-control">
+        <button id="playPauseBtn" onclick="togglePlay()">▶️</button>
+        <div class="volume-container">
+            <span class="volume-icon">🔊</span>
+            <input type="range" min="0" max="100" value="50" class="volume-slider" id="volumeSlider">
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="musique.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
+        const audio = document.getElementById('bgMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        let isPlaying = false;
+
         // Gestion du chargement
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -207,6 +314,26 @@
                 document.getElementById('main-content').classList.add('visible');
             }, 2000);
         });
+
+        // Lecture/Pause
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                playPauseBtn.textContent = '▶️';
+            } else {
+                audio.play();
+                playPauseBtn.textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Volume
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value / 100;
+        });
+
+        // Volume initial
+        audio.volume = 0.5;
 
         // Fonctions des boutons
         function handleLogin() {

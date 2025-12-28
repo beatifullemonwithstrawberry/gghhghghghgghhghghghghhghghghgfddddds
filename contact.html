@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - See-Know Mail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: url('logo.png') center/cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .title {
+            font-size: 42px;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA, #C4B5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .content {
+            max-width: 600px;
+            background: rgba(26, 26, 26, 0.6);
+            border: 2px solid #8B5CF6;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .content h2 {
+            color: #A78BFA;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateX(5px);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-size: 18px;
+            color: #ddd;
+            word-break: break-all;
+        }
+
+        .contact-text a {
+            color: #A78BFA;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: #C4B5FD;
+        }
+
+        .soon {
+            color: #888;
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid #8B5CF6;
+            border-radius: 12px;
+            background-color: #1a1a1a;
+            color: #A78BFA;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #8B5CF6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .title {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content h2 {
+                font-size: 26px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .contact-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo"></div>
+    </div>
+    
+    <h1 class="title">See-Know Mail</h1>
+    
+    <div class="content">
+        <h2>Contact</h2>
+        
+        <div class="contact-item">
+            <div class="icon">📧</div>
+            <div class="contact-text">
+                <a href="mailto:contact@see-know.org">contact@see-know.org</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <div class="icon" style="color: #A78BFA;">📷</div>
+            <div class="contact-text">
+                <a href="https://www.instagram.com/seeknow_org/" target="_blank">https://www.instagram.com/seeknow_org/</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <div class="icon" style="color: #A78BFA;">💬</div>
+            <div class="contact-text soon">
+                Soon..
+            </div>
+        </div>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">Retour</button>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pourquoi See-Know Mail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: url('logo.png') center/cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .title {
+            font-size: 42px;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA, #C4B5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .content {
+            max-width: 800px;
+            background: rgba(26, 26, 26, 0.6);
+            border: 2px solid #8B5CF6;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .content h2 {
+            color: #A78BFA;
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ddd;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #A78BFA;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid #8B5CF6;
+            border-radius: 12px;
+            background-color: #1a1a1a;
+            color: #A78BFA;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #8B5CF6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .title {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content h2 {
+                font-size: 26px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo"></div>
+    </div>
+    
+    <h1 class="title">See-Know Mail</h1>
+    
+    <div class="content">
+        <h2>Pourquoi choisir See-Know Mail ?</h2>
+        <p>
+            See-Know Mail est un projet créé par un petit discordien du nom de <span class="highlight">Tony1337</span> qui s'est fait baiser la gueule en utilisant des mail logs qui brisent les opsec (style Gmail, Outlook, ProtonMail etc.). Il a donc décidé de créer un projet simple : <span class="highlight">une webmail no logs !</span>
+        </p>
+        <p>
+            Nous ne stockons pas les IP et ne revendrons aucune donnée, de plus vos mots de passe sont cryptés et les mails aussi. De plus, comparé à certains cas récents, nous garantissons une <span class="highlight">suppression des données immédiate</span> à la demande qui se fera par mail.
+        </p>
+        <p>
+            Alors profitez de l'occasion de peaufiner votre opsec et utiliser <span class="highlight">See-Know !</span>
+        </p>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">Retour</button>
+</body>
+</html>
